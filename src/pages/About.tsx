@@ -27,13 +27,13 @@ const About = () => {
         transition={{ duration: 0.5 }}
         className="max-w-4xl mx-auto"
       >
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Sobre el Dr. Acosta Marcelo</h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-8">Sobre la Dra. Jesica</h1>
         
         <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
           <div className="relative aspect-square rounded-lg overflow-hidden">
             <img
-              src="https://res.cloudinary.com/dnnxgzqzv/image/upload/v1749764292/Dr.Marcelo_ciyvsl.webp"
-              alt="Dr. Marcelo"
+              src="https://res.cloudinary.com/dnnxgzqzv/image/upload/v1749842376/jesica_exuyvz.webp"
+              alt="Dra. Jesica"
               className="object-cover w-full h-full"
             />
           </div>
@@ -43,12 +43,12 @@ const About = () => {
               10 años de experiencia en odontología
             </h2>
             <p className="text-gray-600 mb-6">
-              El Dr. Acosta Marcelo es un profesional altamente calificado con más de una década de experiencia
+              La Dra. Jesica es una profesional altamente calificada con más de una década de experiencia
               en el campo de la odontología. Su enfoque se centra en proporcionar atención personalizada
               y tratamientos de la más alta calidad para cada paciente.
             </p>
             <p className="text-gray-600">
-              Especializado en odontología estética y general, el Dr. Marcelo combina su experiencia
+              Especializada en odontología estética y general, la Dra. Jesica combina su experiencia
               con las últimas tecnologías y técnicas para garantizar los mejores resultados para sus
               pacientes.
             </p>
@@ -91,7 +91,7 @@ const About = () => {
             <iframe
               className="w-full h-full"
               src="https://www.youtube.com/embed/your-video-id"
-              title="Video sobre el Dr. Marcelo"
+              title="Video sobre la Dra. Jesica"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

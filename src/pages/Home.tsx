@@ -31,7 +31,7 @@ const featuredServices = [
 const testimonials = [
   {
     name: 'María González',
-    text: 'Excelente atención y resultados. El Dr. Marcelo es muy profesional y cuidadoso.',
+    text: 'Excelente atención y resultados. La Dra. Jesica es muy profesional y cuidadosa.',
     rating: 5,
     avatar: 'https://i.pravatar.cc/150?img=23'
   },

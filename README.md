@@ -1,11 +1,10 @@
-
 Colores:
 - #2c7bb7
 
 
-# Dr. Marcelo - Sitio Web
+# Dra. Jesica - Sitio Web
 
-Este es el sitio web de la clínica dental del Dr. Marcelo, desarrollado con React, TypeScript y Tailwind CSS.
+Este es el sitio web de la clínica dental de la Dra. Jesica, desarrollado con React, TypeScript y Tailwind CSS.
 
 ## Características
 
@@ -172,6 +171,6 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## 📞 Contacto
 
-Dr. Marcelo Acosta - [contacto@drmarcelo.com](mailto:contacto@drmarcelo.com)
+Dra. Jesica - [contacto@drajesica.com](mailto:contacto@drajesica.com)
 
-Sitio Web: [www.drmarcelo.com](https://www.drmarcelo.com)
+Sitio Web: [www.drajesica.com](https://www.drajesica.com)

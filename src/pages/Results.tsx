@@ -57,7 +57,7 @@ const testimonials: Testimonial[] = [
     "id": 3,
     "name": "Laura Martínez",
     "image": 'https://i.pravatar.cc/150?img=26',
-    "text": "¡Increíble el cambio en solo 45 minutos! El Dr. Marcelo me explicó todo el proceso y me hizo sentir muy segura. Mi sonrisa pasó de estar amarillenta a lucir blanca y radiante, sin ninguna molestia. ¡Totalmente recomendado!",
+    "text": "¡Increíble el cambio en solo 45 minutos! La Dra. Jesica me explicó todo el proceso y me hizo sentir muy segura. Mi sonrisa pasó de estar amarillenta a lucir blanca y radiante, sin ninguna molestia. ¡Totalmente recomendado!",
     "rating": 5,
     "treatment": "Blanqueamiento Dental con Láser"
   },
@@ -65,7 +65,7 @@ const testimonials: Testimonial[] = [
     "id": 4,
     "name": "Carlos Rojas",
     "image": "https://i.pravatar.cc/150?img=13",
-    "text": "Al principio dudaba por los brackets, pero el Dr. Marcelo me mostró casos similares y me explicó todo el proceso. Durante los 18 meses de tratamiento, las citas fueron eficientes y el seguimiento personalizado fue excelente. ¡Hoy tengo la sonrisa que siempre quise!",
+    "text": "Al principio dudaba por los brackets, pero la Dra. Jesica me mostró casos similares y me explicó todo el proceso. Durante los 18 meses de tratamiento, las citas fueron eficientes y el seguimiento personalizado fue excelente. ¡Hoy tengo la sonrisa que siempre quise!",
     "rating": 5,
     "treatment": "Ortodoncia con Brackets Metálicos"
   },
@@ -73,7 +73,7 @@ const testimonials: Testimonial[] = [
     "id": 5,
     "name": "Ana López",
     "image": "https://i.pravatar.cc/150?img=47",
-    "text": "Perdí varias piezas dentales y me daba vergüenza sonreír. En solo 3 semanas, el Dr. Marcelo me ayudó a recuperar mi sonrisa con prótesis que son increíblemente cómodas y naturales. ¡Ahora puedo comer de todo y sonreír con confianza!",
+    "text": "Perdí varias piezas dentales y me daba vergüenza sonreír. En solo 3 semanas, la Dra. Jesica me ayudó a recuperar mi sonrisa con prótesis que son increíblemente cómodas y naturales. ¡Ahora puedo comer de todo y sonreír con confianza!",
     "rating": 5,
     "treatment": "Prótesis Dentales Totales Removibles"
   }

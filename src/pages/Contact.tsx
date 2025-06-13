@@ -225,7 +225,7 @@ const Contact = () => {
                   <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  contacto@drmarcelo.com
+                  contacto@drajesica.com
                 </p>
               </div>
               <div>
@@ -243,7 +243,7 @@ const Contact = () => {
           {/* Mapa */}
           <div className="rounded-lg overflow-hidden w-full h-96"> {/* Altura fija recomendada */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.4467304654595!2d-57.553719624528306!3d-37.96670264279349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584db0bcfa36805%3A0xbd8f81a0d3afebdc!2sConsultorio%20Odontol%C3%B3gico%20Integral%20constituci%C3%B3n%20-%20Dr.%20Acosta%20Marcelo!5e0!3m2!1ses!2sar!4v1749577839960!5m2!1ses!2sar"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.4467304654595!2d-57.553719624528306!3d-37.96670264279349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584db0bcfa36805%3A0xbd8f81a0d3afebdc!2sConsultorio%20Odontol%C3%B3gico%20Integral%20constituci%C3%B3n%20-%20Dra.%20Jesica!5e0!3m2!1ses!2sar!4v1749577839960!5m2!1ses!2sar"
               width="100%"
               height="100%"
               style={{ border: 0 }}

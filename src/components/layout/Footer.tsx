@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 py-12 sm:py-16 lg:py-20"> {/* Ajuste de padding lateral y vertical */}
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-800">Dr. Acosta Marcelo</h2> {/* Color más oscuro */}
+              <h2 className="text-2xl font-bold text-gray-800">Dra. Jesica</h2> {/* Color más oscuro */}
               <p className="text-sm text-gray-500 leading-relaxed"> {/* Texto más suave */}
                 Tu sonrisa en las mejores manos. Especialista en odontología estética y general.
               </p>
@@ -106,7 +106,7 @@ const Footer = () => {
                     </li>
                     <li className="text-sm text-gray-500">
                       <span className="font-medium block">Email:</span>
-                      contacto@drmarcelo.com
+                      contacto@drajesica.com
                     </li>
                   </ul>
                 </div>
@@ -116,7 +116,7 @@ const Footer = () => {
           
           <div className="mt-12 pt-8 border-t border-gray-200">
             <p className="text-xs text-gray-400 text-center">
-              &copy; {new Date().getFullYear()} Dr. Acosta Marcelo. Todos los derechos reservados.
+              &copy; {new Date().getFullYear()} Dra. Jesica. Todos los derechos reservados.
             </p>
           </div>
         </div>
