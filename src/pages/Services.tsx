@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
@@ -107,6 +107,38 @@ const serviceCategories: ServiceCategory[] = [
 
 const Services = () => {
   const [openCategory, setOpenCategory] = useState<number | null>(0)
+  const categoryRefs = useRef<(HTMLDivElement | null)[]>([])
+  const titleRef = useRef<HTMLHeadingElement | null>(null)
+
+
+  useEffect(() => {
+    if (openCategory !== null && categoryRefs.current[openCategory]) {
+      categoryRefs.current[openCategory]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [openCategory])
+
+
+  useEffect(() => {
+    // Resetear a la posición superior inmediatamente
+    window.scrollTo(0, 0);
+    
+    // Luego aplicar el scroll suave después de un breve retraso
+    const timer = setTimeout(() => {
+      titleRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }, 150);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleAnimationComplete = () => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+      titleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 50)
+  }
 
   return (
     <div className="container mx-auto px-4 py-28">
@@ -115,16 +147,18 @@ const Services = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="max-w-4xl mx-auto"
+        onAnimationComplete={handleAnimationComplete}
       >
         <div className="flex items-center gap-3 mb-8">
           <span className="text-4xl">🦷</span>
-          <h1 className="text-4xl font-bold text-gray-900">Nuestros Servicios</h1>
+          <h1 ref={titleRef} className="text-4xl font-bold text-gray-900">Nuestros Servicios</h1>
         </div>
 
         <div className="space-y-4">
           {serviceCategories.map((category, index) => (
             <div
               key={index}
+              ref={el => (categoryRefs.current[index] = el)}
               className="border border-gray-200 rounded-lg overflow-hidden"
             >
               <button
