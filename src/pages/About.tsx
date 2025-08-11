@@ -48,9 +48,7 @@ const About = () => {
               y tratamientos de la más alta calidad para cada paciente.
             </p>
             <p className="text-gray-600">
-              Especializada en odontología estética y general, la Dra. Jesica combina su experiencia
-              con las últimas tecnologías y técnicas para garantizar los mejores resultados para sus
-              pacientes.
+              Especializada en Ortodoncia y Ortopedia de maxilares, Odontóloga estética y general.
             </p>
           </div>
         </div>

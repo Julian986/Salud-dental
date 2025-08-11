@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 py-12 sm:py-16 lg:py-20"> {/* Ajuste de padding lateral y vertical */}
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-gray-800">Dra. Jesica</h2> {/* Color más oscuro */}
+              <h2 className="text-2xl font-bold text-gray-800">Od. Jesica Brenda Goroso</h2> {/* Color más oscuro */}
               <p className="text-sm text-gray-500 leading-relaxed"> {/* Texto más suave */}
                 Tu sonrisa en las mejores manos. Especialista en odontología estética y general.
               </p>

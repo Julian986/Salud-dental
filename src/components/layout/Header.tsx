@@ -24,7 +24,7 @@ const Header = () => {
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Dra. Jesica</span>
-            <h1 className="text-lg font-semibold leading-6 text-gray-900">Dra. Jesica</h1>
+            <h1 className="text-lg font-semibold leading-6 text-gray-900">Od. Jesica Brenda Goroso</h1>
           </Link>
         </div>
         

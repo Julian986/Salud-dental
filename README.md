@@ -1,3 +1,37 @@
+
+TASKS
+- Pasar el logo de la carpeta public a Cloudinary (convertir a webp).
+- Ver como queda el logo en el icono de la web.
+- Mejorar el SEO
+- Pasar las imagenes a webp y luego a cloudinary
+- Ver que hacemos con la pagina "Servicios"
+- Ver que hacemos con la pagina "Resultados"
+- Pagina Inicio, ver si dejamos o no las tildes en las especialidades
+- Mejorar la seccion de testimonios y poner los reales 
+
+CONTENIDO PARA EL SITIO WEB ✅
+
+A✅
+B... Revisar calidad como icono de la pagina
+C✅
+D✅
+E✅
+F. A implementar.... Hay que implementar un video en protesis fija y carillas
+G✅
+H.✅
+I✅
+J. Poner valor, decir quien es, que hace, curriculum, alguna experiencia laboral. (audio 18/7)
+...
+M.✅
+U✅
+V✅
+W✅
+X✅
+
+
+
+
+
 Colores:
 - #2c7bb7
 
