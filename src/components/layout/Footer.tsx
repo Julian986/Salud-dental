@@ -87,9 +87,11 @@ const Footer = () => {
                 <div>
                   <h3 className="text-sm font-semibold text-gray-800 uppercase tracking-wider">Horarios</h3>
                   <ul className="mt-4 space-y-3">
-                    <li className="text-sm text-gray-500">Lunes - Viernes: 9:00 - 18:00</li>
-                    <li className="text-sm text-gray-500">Sábados: 9:00 - 13:00</li>
-                    <li className="text-sm text-gray-500">Domingos: Cerrado</li>
+                    <li className="text-sm text-gray-500">Lunes: 13:30 a 19 hs</li>
+                    <li className="text-sm text-gray-500">Martes: 9 a 17 hs</li>
+                    <li className="text-sm text-gray-500">Miércoles: 13:30 a 19 hs</li>
+                    <li className="text-sm text-gray-500">Jueves: Cerrado</li>
+                    <li className="text-sm text-gray-500">Viernes: 9 a 17 hs</li>
                   </ul>
                 </div>
                 
@@ -98,15 +100,15 @@ const Footer = () => {
                   <ul className="mt-4 space-y-3">
                     <li className="text-sm text-gray-500">
                       <span className="font-medium block">Dirección:</span>
-                      Av. Principal 123, Ciudad
+                      3 de febrero 3490, Barrio La Perla, Mar del Plata
                     </li>
                     <li className="text-sm text-gray-500">
                       <span className="font-medium block">Teléfono:</span>
-                      +54 123 456 7890
+                      <a href="tel:2236160437" className="hover:text-primary transition-colors">2236160437</a>
                     </li>
                     <li className="text-sm text-gray-500">
                       <span className="font-medium block">Email:</span>
-                      contacto@drajesica.com
+                      <a href="mailto:saluddentaljg@gmail.com" className="hover:text-primary transition-colors">saluddentaljg@gmail.com</a>
                     </li>
                   </ul>
                 </div>

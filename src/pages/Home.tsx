@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 import Slider from 'react-slick'
+import type { CustomArrowProps } from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import '../styles/slick.css'
@@ -13,14 +14,14 @@ const featuredServices = [
     description:
       'Tratamiento de Ortodoncia fija con brackets de diferentes materiales, pudiendo el paciente, optar por la aparatología deseada.\nDesde las técnicas más sencillas hasta las de alta tecnología, estética y confort. Logrando resultados exitosos, corrigiendo la oclusión, tratando cuidadosamente la salud de la articulación temporomandibular, tejidos periodontales y dentarios, dando como resultado la sonrisa ideal.',
     icon: '🦷',
-    image: 'https://i.pinimg.com/736x/ba/45/23/ba4523e334bf8dbde9a91b611418fa3e.jpg',
+    image: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950772/ba4523e334bf8dbde9a91b611418fa3e_oqnvil.webp',
     features: [],
     photos: [
-      'https://i.pinimg.com/736x/ba/45/23/ba4523e334bf8dbde9a91b611418fa3e.jpg',
-      'https://i.pinimg.com/736x/a0/a2/61/a0a2615eac7c8169a8f9ef0ff462a6ca.jpg',
-      'https://i.pinimg.com/736x/a0/f5/f9/a0f5f93fd15c54a3b909854aaa7fb142.jpg',
-      'https://i.pinimg.com/1200x/3f/22/59/3f2259fed0e3e91262ca1656dc7dac44.jpg',
-      'https://i.pinimg.com/736x/ea/b7/00/eab7004dd258070f24a899b479432856.jpg'
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950772/ba4523e334bf8dbde9a91b611418fa3e_oqnvil.webp',
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950781/a0a2615eac7c8169a8f9ef0ff462a6ca_nxw0qg.webp',
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950773/a0f5f93fd15c54a3b909854aaa7fb142_wmxy8w.webp',
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950772/3f2259fed0e3e91262ca1656dc7dac44_ofggdo.webp',
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950772/eab7004dd258070f24a899b479432856_jvmg5m.webp'
     ]
   },
   {
@@ -28,7 +29,7 @@ const featuredServices = [
     description:
       'Última tecnología en Brackets, con características beneficiosas para el tratamiento del paciente.\nÉsta técnica con Brackets autoligables se caracteriza por:',
     icon: '🦷',
-    image: 'https://i.pinimg.com/1200x/ba/76/e8/ba76e8a5085a690329c98ac430c822c1.jpg',
+    image: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950772/ba76e8a5085a690329c98ac430c822c1_rxzqu0.webp',
     features: [
       'Ser indolora.',
       'Tratamiento más rápidos que las técnicas convencionales.',
@@ -38,10 +39,10 @@ const featuredServices = [
       'Sonrisas amplias.'
     ],
     photos: [
-      'https://i.pinimg.com/1200x/ba/76/e8/ba76e8a5085a690329c98ac430c822c1.jpg',
-      'https://i.pinimg.com/1200x/97/7e/ea/977eea7e0fb3319c1620b901c3c33b9b.jpg',
-      'https://i.pinimg.com/1200x/39/de/3a/39de3a252d50fbccaad0e173577afd8a.jpg',
-      'https://i.pinimg.com/736x/22/8a/01/228a01e11e5583f86cbe4091e4f3865d.jpg'
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950772/ba76e8a5085a690329c98ac430c822c1_rxzqu0.webp',
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950772/977eea7e0fb3319c1620b901c3c33b9b_r7ilwb.webp',
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950773/39de3a252d50fbccaad0e173577afd8a_rouq6v.webp',
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950772/228a01e11e5583f86cbe4091e4f3865d_vokpmv.webp'
     ]
   },
   {
@@ -49,7 +50,7 @@ const featuredServices = [
     description:
       'Tratamientos de alineación dentaria de última generación. Con materiales confeccionados con tecnología de avanzada, donde el paciente goza de un buen confort y alta estética.',
     icon: '🦷',
-    image: 'https://cdn.shopify.com/s/files/1/0685/4115/3567/files/clearadultbraces3.jpg',
+    image: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950772/clearadultbraces3_riign8.webp',
     features: []
   },
   {
@@ -57,7 +58,7 @@ const featuredServices = [
     description:
       'Aparatología Removible. Aplicada en pacientes de los 5 a 10 años aprox.\nTratamientos destinados a la corrección de los maxilares en edades tempranas del desarrollo (en pacientes con dientes de leche o temporarios), donde la aparatología utilizada no provoca dolor ni malestar al paciente pequeño.\nCon éstos tratamientos, obtenemos como resultado,',
     icon: '🦷',
-    image: 'https://i.pinimg.com/736x/c4/e0/bd/c4e0bd6b5b5317cca813ac74697949ff.jpg',
+    image: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950772/c4e0bd6b5b5317cca813ac74697949ff_p2phab.webp',
     features: [
       'Aumentar el tamaño de los maxilares, evitando futuro apiñamiento dentario.',
       'La corrección de una  maloclusión.',
@@ -68,11 +69,11 @@ const featuredServices = [
     ],
     afterFeatures: 'Son tratamientos interdisciplinarios, dónde el papel del fonoaudiólogo y/o Otorrinolaringólogo, puede ser importante para el éxito total del tratamiento.',
     photos: [
-      'https://i.pinimg.com/736x/c4/e0/bd/c4e0bd6b5b5317cca813ac74697949ff.jpg',
-      'https://i.pinimg.com/1200x/2a/46/73/2a4673a6470c113caabdcce3196f7c61.jpg',
-      'https://i.pinimg.com/1200x/dc/52/1f/dc521f5d28f76217cad6be5120cc238a.jpg',
-      'https://i.pinimg.com/736x/41/f4/25/41f4259a4da690d3115003886aae15f4.jpg',
-      'https://i.pinimg.com/736x/44/bb/99/44bb99162184c65bf764f811251b8a3a.jpg'
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950772/c4e0bd6b5b5317cca813ac74697949ff_p2phab.webp',
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950772/2a4673a6470c113caabdcce3196f7c61_r8j1p2.webp',
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950771/dc521f5d28f76217cad6be5120cc238a_t2soi8.webp',
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950781/41f4259a4da690d3115003886aae15f4_z0nnue.webp',
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950771/44bb99162184c65bf764f811251b8a3a_ann2ff.webp'
     ]
   },
   {
@@ -80,7 +81,7 @@ const featuredServices = [
     description:
       'Tratamiento de reemplazo fijo de piezas faltantes, sin necesidad de retirar para su higiene, no invasivo, sin cirugía, de alta durabilidad, excelente comodidad y estética.\nDichos tratamientos pueden utilizarse para:',
     icon: '🦷',
-    image: 'https://i.pinimg.com/736x/29/a5/8e/29a58e0956d26bc06aada50db49814d9.jpg',
+    image: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950771/29a58e0956d26bc06aada50db49814d9_wtni4o.webp',
     features: [
       'Reemplazo de una o varias  piezas dentales faltantes.',
       'Modificar el tamaño de un diente.',
@@ -88,8 +89,8 @@ const featuredServices = [
       'Solucionar el color de una pieza dentaria afectada.'
     ],
     photos: [
-      'https://i.pinimg.com/736x/29/a5/8e/29a58e0956d26bc06aada50db49814d9.jpg',
-      'https://i.pinimg.com/1200x/de/56/ea/de56ea4a2b2b1fe8986b84980b988866.jpg'
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950771/29a58e0956d26bc06aada50db49814d9_wtni4o.webp',
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950771/de56ea4a2b2b1fe8986b84980b988866_mgemyc.webp'
     ]
   },
   {
@@ -97,10 +98,11 @@ const featuredServices = [
     description:
       'Son tratamientos estéticos, en la cual reemplazamos una capa de tejido superficial del diente por material de alta estética, confeccionado especialmente para el caso en cuestión, pudiendo otorgar el color y/o forma deseada.',
     icon: '🦷',
-    image: 'https://i.pinimg.com/736x/41/7e/3c/417e3cba7a94a97c4692c8acc82a00a9.jpg',
+    image: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950770/417e3cba7a94a97c4692c8acc82a00a9_rydcoo.webp',
     features: [],
     photos: [
-      'https://i.pinimg.com/736x/41/7e/3c/417e3cba7a94a97c4692c8acc82a00a9.jpg'
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950770/417e3cba7a94a97c4692c8acc82a00a9_rydcoo.webp',
+      '/carillas.jpeg'
     ]
   },
   {
@@ -108,7 +110,7 @@ const featuredServices = [
     description:
       'Se utilizan variedad de técnicas de Blanqueamiento dental, dependiendo la necesidad o requerimiento del paciente. Son técnicas muy poco invasivas, lo que mantiene la integridad dental natural.\n Sus materiales son exclusivos, de uso y manipulación profesional lo que hace de un tratamiento seguro y sin complicaciones.\nEl paciente obtiene una sonrisa naturalmente estética, con piezas dentales  blancas, limpias y saludables.',
     icon: '🦷',
-    image: 'https://www.ragaortodoncia.com/wp-content/uploads/2020/08/blanqueamiento-dental-raga-ortodoncia.jpg',
+    image: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950770/blanqueamiento-dental-raga-ortodoncia_uzliyf.webp',
     features: []
   },
   {
@@ -116,12 +118,12 @@ const featuredServices = [
     description:
       'Son aparatos de reemplazo dental parciales o totales. pueden estar confeccionados con diversos materiales y diseños apropiados a cada caso. Los cuales fueron evolucionando con el tiempo, pudiendo ofrecer al paciente estética y confort a la hora de su rehabilitación con prótesis removibles.',
     icon: '🦷',
-    image: 'https://i.pinimg.com/1200x/9a/2c/6a/9a2c6acc3b9645096e78190ec8999c77.jpg',
+    image: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950773/9a2c6acc3b9645096e78190ec8999c77_letalg.webp',
     features: [],
     photos: [
-      'https://i.pinimg.com/1200x/9a/2c/6a/9a2c6acc3b9645096e78190ec8999c77.jpg',
-      'https://i.pinimg.com/1200x/a9/bf/d2/a9bfd2401e22a377c5484979bcea26fe.jpg',
-      'https://i.pinimg.com/736x/c9/1e/c3/c91ec351427127a512e676de900fc50c.jpg'
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950773/9a2c6acc3b9645096e78190ec8999c77_letalg.webp',
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950770/a9bfd2401e22a377c5484979bcea26fe_yiyeta.webp',
+      'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950772/c91ec351427127a512e676de900fc50c_vzfnko.webp'
     ]
   },
   {
@@ -137,29 +139,101 @@ const featuredServices = [
     description:
       'Tratamos la salud bucal del paciente diagnosticando y tratando de forma cuidadosa y responsable las posibles enfermedades bucales que afectan la salud general.\nLe damos fundamental importancia a la  prevención, educando e informando a los pacientes de los cuidados necesarios y los cambios que sufrimos con las distintas etapas evolutivas de la vida, manteniendo la salud bucal de la familia en condiciones óptimas.',
     icon: '🦷',
-    image: 'https://www.ragaortodoncia.com/wp-content/uploads/2017/05/importancia-de-la-salud-dental.jpg',
+    image: 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1754950771/importancia-de-la-salud-dental_ff4weo.webp',
     features: []
   }
 ]
 
 const testimonials = [
   {
-    name: 'María González',
-    text: 'Excelente atención y resultados. La Dra. Jesica es muy profesional y cuidadosa.',
+    name: 'Luz Mónaco',
+    text: 'Genia Jesi, siempre muy atenta, profesional y con la mejor energía para atender a sus pacientes pequeños sobretodo!!! 😍',
     rating: 5,
-    avatar: 'https://i.pravatar.cc/150?img=23'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjUY5mXIB9uGRQCdQEz85A_wpZd5BKYPastULyuCp1dsOkLuepz1=w72-h72-p-rp-mo-br100'
   },
   {
-    name: 'Juan Pérez',
-    text: 'El mejor dentista que he conocido. Muy recomendable.',
+    name: 'Sonia',
+    text: 'Excelente atención! Jesi una genia! Atiende con mucha paciencia y amor',
     rating: 5,
-    avatar: 'https://i.pravatar.cc/150?img=38'
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjUJCLAKxCINHAwvz-AI1FnYaOeLbsJd1BJccINCH9IlwhG5Dd4=w72-h72-p-rp-mo-ba3-br100'
   },
   {
-    name: 'Ana Martínez',
-    text: 'Tratamiento de ortodoncia exitoso. Muy contenta con los resultados.',
+    name: 'Oscar Farias',
+    text: 'Una genia Jesica hace años nos atiende a todo el grupo familiar para los controles y ahora con tratamiento de ortodoncia junto con mis nenas..los niños se sienten super cómodos 100% recomendable.',
     rating: 5,
-    avatar: 'https://i.pravatar.cc/150?img=35'
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocLvhPmZGBr7mVdgBVqnJRLoz_y7uc3d7hDx4HK4UqD5TZQZsA=w72-h72-p-rp-mo-br100'
+  },
+  {
+    name: 'Martina',
+    text: 'Una genia Jesi 🙌🏻 Excelente atención siempre, la súper recomiendo.…',
+    rating: 5,
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVpLdkl5ayGQAR4Tbmt6vn3jGnUkWtulw4AP38g3Mb12OCHfRkG2A=w72-h72-p-rp-mo-br100'
+  },
+  {
+    name: 'Kevin Miguel',
+    text: 'El mejor lugar, con una profesional increíble.',
+    rating: 5,
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjV7EdDuGGqRAPYERT4MEhYqxUEp-oxkZwCM4V3kwaCHIJDbpis4mg=w72-h72-p-rp-mo-br100'
+  },
+  {
+    name: 'Nicole Balinotti',
+    text: 'Excelente atención y es super amorosa .\nSuper recomendable.',
+    rating: 5,
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocJX4tMHZMZ4Pgtv8XZufxuRrjsbocuUWs58ji3Drjg_9Q0IAg=w72-h72-p-rp-mo-br100'
+  },
+  {
+    name: 'Carla Mariela Beraghi',
+    text: 'Excelente profesional!, recomiendo 100%',
+    rating: 5,
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjVEfKi10bDVpATYiTTCXa7R8B37cJuSooS4l3rsIdnX933smuy_=w72-h72-p-rp-mo-br100'
+  },
+  {
+    name: 'Juan Pablo Becher',
+    text: 'Excelente atención, muy profesional, impecable desde el punto de vista sanitario, muy recomendable!',
+    rating: 5,
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocIT41yk-uHKIt4tmo9d5RUScsZhAzhoBriaDt65FDriLFyA-g=w72-h72-p-rp-mo-br100'
+  },
+  {
+    name: 'Iara nakandakari',
+    text: 'Recomendable 100%!!!! Es super profesional y amable.',
+    rating: 5,
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjWFZmLIDReRv58RGT7T2FPH1IXHdacfTjf1qyEyd1e_fgP9tysl=w72-h72-p-rp-mo-ba3-br100'
+  },
+  {
+    name: 'Héctor emanuele',
+    text: 'Excelente servicio',
+    rating: 5,
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocLThD0SVUMPEX4KkmyHdfB1F3ydAjEpMeA-ciQ5N9Pc7oWF4WIm=w72-h72-p-rp-mo-br100'
+  },
+  {
+    name: 'Fatima Rodriguez',
+    text: '',
+    rating: 5,
+    avatar: 'https://lh3.googleusercontent.com/a/ACg8ocKN81y9Ts5B8Mnt--51C8e_gNzAwWh4GEcTbvN5pyu5eyjWNg=w72-h72-p-rp-mo-br100'
+  },
+  {
+    name: 'Verónica Inés Iturbide',
+    text: '',
+    rating: 5,
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjXBXbxEqDQ89j77IxDCMFxK9Dw2jfdZD4EvhNIVhOUzCpXtsK8YJQ=w72-h72-p-rp-mo-ba3-br100'
+  },
+  {
+    name: 'Lorena Arias',
+    text: '',
+    rating: 5,
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjW3EnWhLaV6eD3b8kNcndhDoOegYCDBGP61LNwz4wWQu2gwTfP9ww=w72-h72-p-rp-mo-br100'
+  },
+  {
+    name: 'Hector Adrian Antunez',
+    text: '',
+    rating: 5,
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjU-vplvAk_zvdKxY6MZ0rA90qpMabxK0QS6LKyvJ3gENhzJVZPB3w=w72-h72-p-rp-mo-ba5-br100'
+  },
+  {
+    name: 'Fedra Sigampa',
+    text: '',
+    rating: 5,
+    avatar: 'https://lh3.googleusercontent.com/a-/ALV-UjWumPsx8v49f5ex92zJF-Y3fZGiIxQolMzCawn4L_WeZDNztuPDtw=w72-h72-p-rp-mo-ba2-br100'
   }
 ]
 
@@ -168,6 +242,33 @@ const Home = () => {
   const [activeImages, setActiveImages] = useState<string[]>([])
   const [activeIndex, setActiveIndex] = useState(0)
   const sliderRef = useRef<Slider | null>(null)
+  const testimonialsSliderRef = useRef<Slider | null>(null)
+
+  const isVideoUrl = (url: string) => /\.(mp4|webm|ogg)(\?|$)/i.test(url)
+
+  const PrevArrow = ({ onClick }: CustomArrowProps) => (
+    <button
+      aria-label="Anterior"
+      onClick={onClick}
+      className="carousel-arrow hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 md:-translate-y-[60%] z-10 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-gray-50 border border-gray-200 cursor-pointer"
+    >
+      <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+    </button>
+  )
+
+  const NextArrow = ({ onClick }: CustomArrowProps) => (
+    <button
+      aria-label="Siguiente"
+      onClick={onClick}
+      className="carousel-arrow hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 md:-translate-y-[60%] z-10 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-gray-50 border border-gray-200 cursor-pointer"
+    >
+      <svg className="w-6 h-6 text-gray-600 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+    </button>
+  )
 
   const sliderSettings = {
     dots: true,
@@ -176,7 +277,10 @@ const Home = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000
+    autoplaySpeed: 5000,
+    arrows: true,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />
   }
 
   useEffect(() => {
@@ -275,6 +379,7 @@ const Home = () => {
                   <div className="mt-6 flex flex-wrap gap-3">
                     <Link
                       to="/contacto"
+                      state={{ from: 'consultar' }}
                       className="inline-flex items-center rounded-full bg-[rgb(44,123,183)] px-4 py-2 text-white font-semibold hover:bg-[rgb(44,123,183)]/90 transition-colors"
                     >
                       Consultar
@@ -319,20 +424,20 @@ const Home = () => {
           <button
             aria-label="Anterior"
             onClick={() => sliderRef.current?.slickPrev()}
-            className="absolute left-3 md:left-6 z-[60] inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/10 hover:bg-white/20 text-white"
+            className="hidden md:inline-flex absolute top-1/2 -translate-y-1/2 left-3 md:left-6 z-[60] items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/10 hover:bg-white/20 text-white"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 md:w-8 md:h-8"><path fillRule="evenodd" d="M15.78 3.72a.75.75 0 010 1.06L9.56 11l6.22 6.22a.75.75 0 11-1.06 1.06l-6.75-6.75a.75.75 0 010-1.06l6.75-6.75a.75.75 0 011.06 0z" clipRule="evenodd" /></svg>
           </button>
           <button
             aria-label="Siguiente"
             onClick={() => sliderRef.current?.slickNext()}
-            className="absolute right-3 md:right-6 z-[60] inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/10 hover:bg-white/20 text-white"
+            className="hidden md:inline-flex absolute top-1/2 -translate-y-1/2 right-3 md:right-6 z-[60] items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/10 hover:bg-white/20 text-white"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 md:w-8 md:h-8"><path fillRule="evenodd" d="M8.22 20.28a.75.75 0 010-1.06L14.44 13 8.22 6.78a.75.75 0 011.06-1.06l6.75 6.75a.75.75 0 010 1.06l-6.75 6.75a.75.75 0 01-1.06 0z" clipRule="evenodd" /></svg>
           </button>
 
           {/* Contenedor del slide */}
-          <div className="relative z-[55] w-full max-w-6xl px-4">
+          <div className="relative z-[55] w-full max-w-6xl px-4 lightbox-slider">
             <Slider
               ref={sliderRef}
               initialSlide={activeIndex}
@@ -348,18 +453,48 @@ const Home = () => {
             >
               {activeImages.map((src, idx) => (
                 <div key={idx} className="px-2">
-                  <img
-                    src={src}
-                    alt={`foto-${idx + 1}`}
-                        className="mx-auto max-h-[80vh] md:max-h-[85vh] w-auto object-contain drop-shadow-2xl rounded-[5%]"
-                    loading="lazy"
-                  />
+                  {isVideoUrl(src) ? (
+                    <video
+                      controls
+                      playsInline
+                      preload="metadata"
+                      className="mx-auto max-h-[80vh] md:max-h-[85vh] w-auto object-contain drop-shadow-2xl rounded-[5%] bg-black"
+                    >
+                      <source src={src} />
+                      Tu navegador no soporta la reproducción de video.
+                    </video>
+                  ) : (
+                    <img
+                      src={src}
+                      alt={`foto-${idx + 1}`}
+                      className="mx-auto max-h-[80vh] md:max-h-[85vh] w-auto object-contain drop-shadow-2xl rounded-[5%]"
+                      loading="lazy"
+                    />
+                  )}
                 </div>
               ))}
             </Slider>
 
-            {/* Indicador */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/90 text-sm bg-black/30 px-3 py-1 rounded-full">
+            {/* Controles inferiores (solo móvil) */}
+            <div className="md:hidden fixed bottom-16 left-1/2 -translate-x-1/2 z-[70] flex items-center justify-center gap-4">
+              <button
+                aria-label="Anterior"
+                onClick={() => sliderRef.current?.slickPrev()}
+                className="inline-flex items-center justify-center h-10 px-4 rounded-full bg-white/20 text-white backdrop-blur-sm border border-white/20"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6"><path fillRule="evenodd" d="M15.78 3.72a.75.75 0 010 1.06L9.56 11l6.22 6.22a.75.75 0 11-1.06 1.06l-6.75-6.75a.75.75 0 010-1.06l6.75-6.75a.75.75 0 011.06 0z" clipRule="evenodd" /></svg>
+              </button>
+              <button
+                aria-label="Siguiente"
+                onClick={() => sliderRef.current?.slickNext()}
+                className="inline-flex items-center justify-center h-10 px-4 rounded-full bg-white/20 text-white backdrop-blur-sm border border-white/20"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6"><path fillRule="evenodd" d="M8.22 20.28a.75.75 0 010-1.06L14.44 13 8.22 6.78a.75.75 0 011.06-1.06l6.75 6.75a.75.75 0 010 1.06l-6.75 6.75a.75.75 0 01-1.06 0z" clipRule="evenodd" /></svg>
+              </button>
+            </div>
+
+            {/* Indicador (oculto en móvil) */}
+            <div className="hidden md:block absolute bottom-4 left-1/2 -translate-x-1/2 text-white/90 text-sm bg-black/30 px-3 py-1 rounded-full">
               {activeIndex + 1} / {activeImages.length}
             </div>
           </div>
@@ -370,8 +505,8 @@ const Home = () => {
         <section className="py-20 bg-gray-50">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Lo que dicen nuestros pacientes</h2>
-          <div className="max-w-4xl mx-auto">
-            <Slider {...sliderSettings}>
+          <div className="relative max-w-4xl mx-auto testimonials-slider">
+            <Slider ref={testimonialsSliderRef} {...sliderSettings}>
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="px-4">
                   <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -379,22 +514,45 @@ const Home = () => {
                       <img 
                         src={testimonial.avatar} 
                         alt={testimonial.name}
-                        className="w-16 h-16 rounded-full object-cover border-2 border-primary"
+                        className="w-20 h-20 rounded-full object-cover"
                       />
                       <div>
                         <h3 className="font-semibold text-gray-900 text-lg">{testimonial.name}</h3>
                         <div className="flex items-center">
                           {[...Array(testimonial.rating)].map((_, i) => (
-                            <span key={i} className="text-yellow-400 text-xl">★</span>
+                            <span key={i} className="text-yellow-400 text-2xl">★</span>
                           ))}
                         </div>
                       </div>
                     </div>
-                    <p className="text-gray-600 text-lg leading-relaxed italic">"{testimonial.text}"</p>
+                    {testimonial.text?.trim() && (
+                      <p className="text-gray-600 text-lg leading-relaxed italic">"{testimonial.text}"</p>
+                    )}
                   </div>
                 </div>
               ))}
             </Slider>
+            {/* Controles inferiores (solo móvil) para testimonios con nuevo diseño */}
+            <div className="md:hidden mt-1 flex items-center justify-center gap-4">
+              <button
+                aria-label="Anterior"
+                onClick={() => testimonialsSliderRef.current?.slickPrev()}
+                className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 border border-gray-200 cursor-pointer"
+              >
+                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              <button
+                aria-label="Siguiente"
+                onClick={() => testimonialsSliderRef.current?.slickNext()}
+                className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 border border-gray-200 cursor-pointer"
+              >
+                <svg className="w-6 h-6 text-gray-600 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </section>

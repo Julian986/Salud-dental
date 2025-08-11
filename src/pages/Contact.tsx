@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { FaWhatsapp } from 'react-icons/fa';
@@ -26,6 +27,9 @@ const validationSchema = Yup.object({
 
 const Contact = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
+  const fromConsultar = (location.state as { from?: string } | null)?.from === 'consultar'
 
   const handleSubmit = async (_values: FormValues, { setSubmitting }: FormikHelpers<FormValues>) => {
     try {
@@ -47,6 +51,18 @@ const Contact = () => {
         transition={{ duration: 0.5 }}
         className="max-w-6xl mx-auto"
       >
+        {fromConsultar && (
+          <div className="mb-4">
+            <button
+              aria-label="Volver"
+              onClick={() => navigate(-1)}
+              className="inline-flex items-center gap-2 px-3 h-10 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5"><path fillRule="evenodd" d="M15.78 3.72a.75.75 0 010 1.06L9.56 11l6.22 6.22a.75.75 0 11-1.06 1.06l-6.75-6.75a.75.75 0 010-1.06l6.75-6.75a.75.75 0 011.06 0z" clipRule="evenodd" /></svg>
+              <span>Volver</span>
+            </button>
+          </div>
+        )}
         <h1 className="text-4xl font-bold text-gray-900 mb-8">Contacto</h1>
 
         <div className="grid md:grid-cols-2 gap-12">

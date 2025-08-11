@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
@@ -10,6 +10,9 @@ interface Service {
   duration?: string
   featured?: boolean
   slug?: string
+  features?: string[]
+  afterFeatures?: string
+  group?: 'niños' | 'adolescentes' | 'adultos'
 }
 
 interface ServiceCategory {
@@ -20,125 +23,131 @@ interface ServiceCategory {
 
 const serviceCategories: ServiceCategory[] = [
   {
-    title: "Servicios Preventivos",
-    icon: "🛡️",
+    title: "Especialidades",
+    icon: "🦷",
     services: [
       {
-        title: "Limpieza Dental",
-        icon: "🦷",
-        description: "Limpieza profesional para mantener tus dientes saludables y prevenir enfermedades periodontales",
-        price: "Desde $50",
-        duration: "30-45 mins",
+        title: 'Ortodoncia para adolescentes y adultos con brackets.',
+        icon: '🦷',
+        description:
+          'Tratamiento de Ortodoncia fija con brackets de diferentes materiales, pudiendo el paciente, optar por la aparatología deseada.\nDesde las técnicas más sencillas hasta las de alta tecnología, estética y confort. Logrando resultados exitosos, corrigiendo la oclusión, tratando cuidadosamente la salud de la articulación temporomandibular, tejidos periodontales y dentarios, dando como resultado la sonrisa ideal.',
         featured: true,
-        slug: "limpieza-dental"
+        slug: 'ortodoncia-brackets',
+        group: 'adolescentes'
       },
       {
-        title: "Revisión General",
-        icon: "👨‍⚕️",
-        description: "Evaluación completa de tu salud dental con diagnóstico profesional",
-        price: "Desde $30",
-        duration: "20-30 mins",
-        slug: "revision-general"
+        title: 'Ortodoncia para adolescentes y adultos  con brackets autoligables.',
+        icon: '🦷',
+        description:
+          'Última tecnología en Brackets, con características beneficiosas para el tratamiento del paciente.\nÉsta técnica con Brackets autoligables se caracteriza por:',
+        features: [
+          'Ser indolora.',
+          'Tratamiento más rápidos que las técnicas convencionales.',
+          'Evitar extracciones dentales en los tratamientos indicados con ellas.',
+          'Mejor confort.',
+          'Mejor higiene.',
+          'Sonrisas amplias.'
+        ],
+        slug: 'brackets-autoligables',
+        group: 'adolescentes'
       },
       {
-        title: "Fluorización",
-        icon: "✨",
-        description: "Tratamiento preventivo para fortalecer el esmalte dental y prevenir caries",
-        price: "Desde $40",
-        duration: "15-20 mins",
-        slug: "fluorizacion"
-      }
-    ]
-  },
-  {
-    title: "Servicios Estéticos",
-    icon: "🌟",
-    services: [
+        title: 'Alineadores Invisibles para adultos.',
+        icon: '🦷',
+        description:
+          'Tratamientos de alineación dentaria de última generación. Con materiales confeccionados con tecnología de avanzada, donde el paciente goza de un buen confort y alta estética.',
+        slug: 'alineadores-invisibles',
+        group: 'adultos'
+      },
       {
-        title: "Blanqueamiento Dental",
-        icon: "😁",
-        description: "Tratamiento profesional para una sonrisa más brillante y blanca",
-        price: "Desde $200",
-        duration: "1 hora",
+        title: 'Ortopedia para niños.',
+        icon: '🦷',
+        description:
+          'Aparatología Removible. Aplicada en pacientes de los 5 a 10 años aprox.\nTratamientos destinados a la corrección de los maxilares en edades tempranas del desarrollo (en pacientes con dientes de leche o temporarios), donde la aparatología utilizada no provoca dolor ni malestar al paciente pequeño.\nCon éstos tratamientos, obtenemos como resultado,',
+        features: [
+          'Aumentar el tamaño de los maxilares, evitando futuro apiñamiento dentario.',
+          'La corrección de una  maloclusión.',
+          'Corregir un mal hábito.',
+          'Corrección de una deglución atípica.',
+          'Corrigen un apoyo lingual incorrecto.',
+          'Entre otras …'
+        ],
+        afterFeatures:
+          'Son tratamientos interdisciplinarios, dónde el papel del fonoaudiólogo y/o Otorrinolaringólogo, puede ser importante para el éxito total del tratamiento.',
+        slug: 'ortopedia-ninos',
+        group: 'niños'
+      },
+      {
+        title: 'Prótesis Dental Fija',
+        icon: '🦷',
+        description:
+          'Tratamiento de reemplazo fijo de piezas faltantes, sin necesidad de retirar para su higiene, no invasivo, sin cirugía, de alta durabilidad, excelente comodidad y estética.\nDichos tratamientos pueden utilizarse para:',
+        features: [
+          'Reemplazo de una o varias  piezas dentales faltantes.',
+          'Modificar el tamaño de un diente.',
+          'Modificar la forma dentaria.',
+          'Solucionar el color de una pieza dentaria afectada.'
+        ],
+        slug: 'protesis-fija',
+        group: 'adultos'
+      },
+      {
+        title: 'Carillas Dentales',
+        icon: '🦷',
+        description:
+          'Son tratamientos estéticos, en la cual reemplazamos una capa de tejido superficial del diente por material de alta estética, confeccionado especialmente para el caso en cuestión, pudiendo otorgar el color y/o forma deseada.',
         featured: true,
-        slug: "blanqueamiento-dental"
+        slug: 'carillas-dentales',
+        group: 'adultos'
       },
       {
-        title: "Carillas Dentales",
-        icon: "💎",
-        description: "Mejora la apariencia de tus dientes con carillas de porcelana o composite",
-        price: "Desde $300",
-        duration: "2-3 visitas",
-        slug: "carillas-dentales"
+        title: 'Blanqueamiento Dental',
+        icon: '🦷',
+        description:
+          'Se utilizan variedad de técnicas de Blanqueamiento dental, dependiendo la necesidad o requerimiento del paciente. Son técnicas muy poco invasivas, lo que mantiene la integridad dental natural.\n Sus materiales son exclusivos, de uso y manipulación profesional lo que hace de un tratamiento seguro y sin complicaciones.\nEl paciente obtiene una sonrisa naturalmente estética, con piezas dentales  blancas, limpias y saludables.',
+        slug: 'blanqueamiento-dental',
+        group: 'adultos'
       },
       {
-        title: "Diseño de Sonrisa",
-        icon: "🎨",
-        description: "Plan personalizado para lograr tu sonrisa ideal con tecnología digital",
-        price: "Consultar",
-        duration: "Evaluación inicial",
-        slug: "diseno-sonrisa"
-      }
-    ]
-  },
-  {
-    title: "Servicios de Urgencia",
-    icon: "🚑",
-    services: [
-      {
-        title: "Dolor Dental",
-        icon: "😣",
-        description: "Atención inmediata para aliviar el dolor y tratar la causa subyacente",
-        price: "Desde $80",
-        duration: "30-60 mins",
-        slug: "dolor-dental"
+        title: 'Prótesis Dentales  Removibles',
+        icon: '🦷',
+        description:
+          'Son aparatos de reemplazo dental parciales o totales. pueden estar confeccionados con diversos materiales y diseños apropiados a cada caso. Los cuales fueron evolucionando con el tiempo, pudiendo ofrecer al paciente estética y confort a la hora de su rehabilitación con prótesis removibles.',
+        slug: 'protesis-removibles',
+        group: 'adultos'
       },
       {
-        title: "Reparación de Emergencia",
-        icon: "🔧",
-        description: "Soluciones rápidas para problemas dentales inesperados",
-        price: "Consultar",
-        duration: "Varía según caso",
-        slug: "reparacion-emergencia"
+        title: 'Medicina Estética',
+        icon: '🦷',
+        description:
+          'Es la rama de la medicina donde el Odontólogo Especializado, aborda los tejidos superficiales y/o músculos faciales, a través de inyecciones  de sustancias apropiadas para la soluciones estéticas, las cuales pueden ser ácido hialurónico y toxina Botulínica.\nLos tratamientos más solicitados al odontólogo, luego de una rehabilitación oral adecuada ya sea con ortodoncia o prótesis dental, son la solución de una sonrisa gingival, tratamiento de bruxismo o terminación estética para un labio con dimensiones armoniosas.',
+        slug: 'medicina-estetica',
+        group: 'adultos'
+      },
+      {
+        title: 'Odontología general para niños, adolescentes y  adultos.',
+        icon: '🦷',
+        description:
+          'Tratamos la salud bucal del paciente diagnosticando y tratando de forma cuidadosa y responsable las posibles enfermedades bucales que afectan la salud general.\nLe damos fundamental importancia a la  prevención, educando e informando a los pacientes de los cuidados necesarios y los cambios que sufrimos con las distintas etapas evolutivas de la vida, manteniendo la salud bucal de la familia en condiciones óptimas.',
+        slug: 'odontologia-general',
+        group: 'adultos'
       }
     ]
   }
 ]
 
 const Services = () => {
-  const [openCategory, setOpenCategory] = useState<number | null>(0)
-  const categoryRefs = useRef<(HTMLDivElement | null)[]>([])
   const titleRef = useRef<HTMLHeadingElement | null>(null)
-
-
-  useEffect(() => {
-    if (openCategory !== null && categoryRefs.current[openCategory]) {
-      categoryRefs.current[openCategory]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }, [openCategory])
-
+  const [openGroups, setOpenGroups] = useState<{ niños: boolean; adolescentes: boolean; adultos: boolean }>({
+    niños: false,
+    adolescentes: false,
+    adultos: false
+  })
 
   useEffect(() => {
-    // Resetear a la posición superior inmediatamente
-    window.scrollTo(0, 0);
-    
-    // Luego aplicar el scroll suave después de un breve retraso
-    const timer = setTimeout(() => {
-      titleRef.current?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }, 150);
-    
-    return () => clearTimeout(timer);
-  }, []);
-
-  const handleAnimationComplete = () => {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
-      titleRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }, 50)
-  }
+    // Llevar siempre al tope absoluto al cargar
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [])
 
   return (
     <div className="container mx-auto px-4 py-28">
@@ -147,99 +156,88 @@ const Services = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="max-w-4xl mx-auto"
-        onAnimationComplete={handleAnimationComplete}
       >
         <div className="flex items-center gap-3 mb-8">
           <span className="text-4xl">🦷</span>
           <h1 ref={titleRef} className="text-4xl font-bold text-gray-900">Nuestros Servicios</h1>
         </div>
 
-        <div className="space-y-4">
-          {serviceCategories.map((category, index) => (
-            <div
-              key={index}
-              ref={el => (categoryRefs.current[index] = el)}
-              className="border border-gray-200 rounded-lg overflow-hidden"
-            >
-              <button
-                className="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors flex justify-between items-center"
-                onClick={() => setOpenCategory(openCategory === index ? null : index)}
-              >
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">{category.icon}</span>
-                  <h2 className="text-xl font-semibold text-gray-900">{category.title}</h2>
-                </div>
-                <span className="text-gray-500">
-                  {openCategory === index ? "−" : "+"}
-                </span>
-              </button>
-
-              <AnimatePresence>
-                {openCategory === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="p-6 bg-gray-50">
-                      <div className="grid md:grid-cols-2 gap-6">
-                        {category.services.map((service, serviceIndex) => (
-                          <div
-                            key={serviceIndex}
-                            className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-                          >
-                            <div className="p-6">
-                              <div className="flex items-center gap-3 mb-4">
-                                <span className="text-3xl">{service.icon}</span>
-                                <h3 className="text-xl font-bold text-gray-900">
-                                  {service.title}
-                                </h3>
-                              </div>
-                              
-                              <p className="text-gray-600 mb-4 line-clamp-3">{service.description}</p>
-                              
-                              <div className="flex flex-wrap gap-2 mb-4">
-                                {service.duration && (
-                                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-600">
-                                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        {/* Contenedor general de Especialidades con 3 sub-contenedores por edad */}
+        <div className="space-y-12">
+          {([
+            { key: 'niños', title: 'Atención Infantil' },
+            { key: 'adolescentes', title: 'Adolescentes' },
+            { key: 'adultos', title: 'Adultos' }
+          ] as { key: NonNullable<Service['group']>; title: string }[]).map(({ key, title }) => {
+            const groupServices = serviceCategories[0].services.filter(s => s.group === key)
+            if (groupServices.length === 0) return null
+            const isOpen = openGroups[key]
+            return (
+              <section key={key} className="border border-gray-200 rounded-xl overflow-hidden">
+                <button
+                  type="button"
+                  className="w-full px-6 py-4 bg-white flex items-center justify-between hover:bg-gray-50"
+                  onClick={() => setOpenGroups(prev => ({ ...prev, [key]: !prev[key] }))}
+                >
+                  <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
+                  <span className="text-gray-500">{isOpen ? '−' : '+'}</span>
+                </button>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="p-6 bg-gray-50">
+                        <div className="grid md:grid-cols-2 gap-6">
+                          {groupServices.map((service, idx) => (
+                            <div key={idx} className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                              <div className="p-6">
+                                <div className="flex items-center gap-3 mb-4">
+                                  <span className="text-3xl">{service.icon}</span>
+                                  <h3 className="text-xl font-bold text-gray-900">{service.title}</h3>
+                                </div>
+                                <p className="text-gray-600 mb-4 whitespace-pre-line">{service.description}</p>
+                                {service.features && service.features.length > 0 && (
+                                  <ul className="mb-4 space-y-2">
+                                    {service.features.map((f, i) => (
+                                      <li key={i} className="flex items-center text-gray-700">
+                                        <svg className="w-5 h-5 flex-none shrink-0 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        {f}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                )}
+                                {service.afterFeatures && (
+                                  <p className="text-gray-600 mb-4">{service.afterFeatures}</p>
+                                )}
+                                <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
+                                  {service.price && (
+                                    <p className="text-lg font-semibold text-primary">{service.price}</p>
+                                  )}
+                                  <Link to="/contacto" className="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+                                    <span className="text-sm font-medium">Consultar</span>
+                                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                                     </svg>
-                                    {service.duration}
-                                  </span>
-                                )}
-                                {service.featured && (
-                                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-primary/10 text-primary">
-                                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-                                    </svg>
-                                    Destacado
-                                  </span>
-                                )}
-                              </div>
-                              
-                              <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
-                                {service.price && (
-                                  <p className="text-lg font-semibold text-primary">{service.price}</p>
-                                )}
-                                <button className="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
-                                  <span className="text-sm font-medium">Agendar cita</span>
-                                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                                  </svg>
-                                </button>
+                                  </Link>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </section>
+            )
+          })}
         </div>
       </motion.div>
 
@@ -250,7 +248,7 @@ const Services = () => {
         transition={{ delay: 0.4, duration: 0.5 }}
         className="mt-20 text-center"
       >
-        <h3 className="text-2xl font-bold text-gray-900 mb-6">¿No encuentras lo que buscas?</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mb-6">¿Listo para mejorar tu sonrisa?</h3>
         <Link
           to="/contacto"
           className="inline-block px-8 py-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300"

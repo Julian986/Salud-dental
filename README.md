@@ -6,6 +6,7 @@ TASKS
 - Pasar las imagenes a webp y luego a cloudinary
 - Ver que hacemos con la pagina "Servicios"
 - Ver que hacemos con la pagina "Resultados"
+- La pagina "Reservar turno" cambiarla solo quiere wpp
 - Pagina Inicio, ver si dejamos o no las tildes en las especialidades
 - Mejorar la seccion de testimonios y poner los reales 
 

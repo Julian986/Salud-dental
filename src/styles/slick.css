@@ -1,0 +1,78 @@
+@media (max-width: 767px) {
+  /* Ocultar flechas laterales por defecto en móviles y dejar espacio inferior */
+  .slick-slider {
+    padding-bottom: 64px;
+  }
+
+  .slick-slider .slick-prev,
+  .slick-slider .slick-next {
+    display: none !important;
+  }
+
+  /* Reubicar y rediseñar dots en móviles */
+  .slick-dots {
+    position: static !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px !important;
+  }
+
+  .slick-dots li {
+    width: auto;
+    height: auto;
+    margin: 0;
+  }
+
+  .slick-dots li button {
+    width: 14px;
+    height: 6px;
+    padding: 0;
+  }
+
+  .slick-dots li button:before {
+    content: '';
+    opacity: 1 !important;
+    color: transparent !important;
+    width: 6px;
+    height: 6px;
+    display: block;
+    border-radius: 9999px;
+    background: #cbd5e1; /* slate-300 */
+    transition: all 200ms ease;
+  }
+
+  .slick-dots li.slick-active button:before {
+    width: 6px; /* misma forma (círculo) que el inactivo */
+    border-radius: 9999px;
+    background: #2C7BB7; /* primary */
+  }
+}
+
+/* Fijar posición de flechas y dots en lightbox independientemente del alto del contenido */
+.lightbox-slider .slick-dots {
+  position: fixed !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  bottom: 24px !important;
+  z-index: 70;
+}
+
+.lightbox-slider .slick-prev,
+.lightbox-slider .slick-next {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+/* Ajustes adicionales para el slider de testimonios: subir flechas y dots en desktop */
+@media (min-width: 768px) {
+  .testimonials-slider .slick-dots {
+    margin-top: 8px !important;
+  }
+  .testimonials-slider .carousel-arrow {
+    transform: translateY(-60%);
+  }
+}
+
+

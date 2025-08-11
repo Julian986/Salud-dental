@@ -54,28 +54,124 @@ const beforeAfterCases: BeforeAfter[] = [
 
 const testimonials: Testimonial[] = [
   {
-    "id": 3,
-    "name": "Laura Martínez",
-    "image": 'https://i.pravatar.cc/150?img=26',
-    "text": "¡Increíble el cambio en solo 45 minutos! La Dra. Jesica me explicó todo el proceso y me hizo sentir muy segura. Mi sonrisa pasó de estar amarillenta a lucir blanca y radiante, sin ninguna molestia. ¡Totalmente recomendado!",
-    "rating": 5,
-    "treatment": "Blanqueamiento Dental con Láser"
+    id: 7,
+    name: 'Carla Mariela Beraghi',
+    image: 'https://lh3.googleusercontent.com/a-/ALV-UjVEfKi10bDVpATYiTTCXa7R8B37cJuSooS4l3rsIdnX933smuy_=w72-h72-p-rp-mo-br100',
+    text: 'Excelente profesional!, recomiendo 100%',
+    rating: 5,
+    treatment: ''
   },
   {
-    "id": 4,
-    "name": "Carlos Rojas",
-    "image": "https://i.pravatar.cc/150?img=13",
-    "text": "Al principio dudaba por los brackets, pero la Dra. Jesica me mostró casos similares y me explicó todo el proceso. Durante los 18 meses de tratamiento, las citas fueron eficientes y el seguimiento personalizado fue excelente. ¡Hoy tengo la sonrisa que siempre quise!",
-    "rating": 5,
-    "treatment": "Ortodoncia con Brackets Metálicos"
+    id: 8,
+    name: 'Juan Pablo Becher',
+    image: 'https://lh3.googleusercontent.com/a/ACg8ocIT41yk-uHKIt4tmo9d5RUScsZhAzhoBriaDt65FDriLFyA-g=w72-h72-p-rp-mo-br100',
+    text: 'Excelente atención, muy profesional, impecable desde el punto de vista sanitario, muy recomendable!',
+    rating: 5,
+    treatment: ''
   },
   {
-    "id": 5,
-    "name": "Ana López",
-    "image": "https://i.pravatar.cc/150?img=47",
-    "text": "Perdí varias piezas dentales y me daba vergüenza sonreír. En solo 3 semanas, la Dra. Jesica me ayudó a recuperar mi sonrisa con prótesis que son increíblemente cómodas y naturales. ¡Ahora puedo comer de todo y sonreír con confianza!",
-    "rating": 5,
-    "treatment": "Prótesis Dentales Totales Removibles"
+    id: 6,
+    name: 'Martina',
+    image: 'https://lh3.googleusercontent.com/a-/ALV-UjVpLdkl5ayGQAR4Tbmt6vn3jGnUkWtulw4AP38g3Mb12OCHfRkG2A=w72-h72-p-rp-mo-br100',
+    text: 'Una genia Jesi 🙌🏻 Excelente atención siempre, la súper recomiendo.…',
+    rating: 5,
+    treatment: ''
+  },
+  {
+    id: 3,
+    name: 'Luz Mónaco',
+    image: 'https://lh3.googleusercontent.com/a-/ALV-UjUY5mXIB9uGRQCdQEz85A_wpZd5BKYPastULyuCp1dsOkLuepz1=w72-h72-p-rp-mo-br100',
+    text: 'Genia Jesi, siempre muy atenta, profesional y con la mejor energía para atender a sus pacientes pequeños sobretodo!!! 😍',
+    rating: 5,
+    treatment: ''
+  },
+  {
+    id: 9,
+    name: 'Iara nakandakari',
+    image: 'https://lh3.googleusercontent.com/a-/ALV-UjWFZmLIDReRv58RGT7T2FPH1IXHdacfTjf1qyEyd1e_fgP9tysl=w72-h72-p-rp-mo-ba3-br100',
+    text: 'Recomendable 100%!!!! Es super profesional y amable.',
+    rating: 5,
+    treatment: ''
+  },
+  {
+    id: 2,
+    name: 'Sonia',
+    image: 'https://lh3.googleusercontent.com/a-/ALV-UjUJCLAKxCINHAwvz-AI1FnYaOeLbsJd1BJccINCH9IlwhG5Dd4=w72-h72-p-rp-mo-ba3-br100',
+    text: 'Excelente atención! Jesi una genia! Atiende con mucha paciencia y amor',
+    rating: 5,
+    treatment: ''
+  },
+  {
+    id: 4,
+    name: 'Oscar Farias',
+    image: 'https://lh3.googleusercontent.com/a/ACg8ocLvhPmZGBr7mVdgBVqnJRLoz_y7uc3d7hDx4HK4UqD5TZQZsA=w72-h72-p-rp-mo-br100',
+    text: 'Una genia Jesica hace años nos atiende a todo el grupo familiar para los controles y ahora con tratamiento de ortodoncia junto con mis nenas..los niños se sienten super cómodos 100% recomendable.',
+    rating: 5,
+    treatment: ''
+  },
+  {
+    id: 1,
+    name: 'Kevin Miguel',
+    image: 'https://lh3.googleusercontent.com/a-/ALV-UjV7EdDuGGqRAPYERT4MEhYqxUEp-oxkZwCM4V3kwaCHIJDbpis4mg=w72-h72-p-rp-mo-br100',
+    text: 'El mejor lugar, con una profesional increíble.',
+    rating: 5,
+    treatment: ''
+  },
+  {
+    id: 5,
+    name: 'Nicole Balinotti',
+    image: 'https://lh3.googleusercontent.com/a/ACg8ocJX4tMHZMZ4Pgtv8XZufxuRrjsbocuUWs58ji3Drjg_9Q0IAg=w72-h72-p-rp-mo-br100',
+    text: 'Excelente atención y es super amorosa .\nSuper recomendable.',
+    rating: 5,
+    treatment: ''
+  },
+  {
+    id: 10,
+    name: 'Héctor emanuele',
+    image: 'https://lh3.googleusercontent.com/a/ACg8ocLThD0SVUMPEX4KkmyHdfB1F3ydAjEpMeA-ciQ5N9Pc7oWF4WIm=w72-h72-p-rp-mo-br100',
+    text: 'Excelente servicio',
+    rating: 5,
+    treatment: ''
+  },
+  {
+    id: 11,
+    name: 'Fatima Rodriguez',
+    image: 'https://lh3.googleusercontent.com/a/ACg8ocKN81y9Ts5B8Mnt--51C8e_gNzAwWh4GEcTbvN5pyu5eyjWNg=w72-h72-p-rp-mo-br100',
+    text: '',
+    rating: 5,
+    treatment: ''
+  },
+  {
+    id: 12,
+    name: 'Verónica Inés Iturbide',
+    image: 'https://lh3.googleusercontent.com/a-/ALV-UjXBXbxEqDQ89j77IxDCMFxK9Dw2jfdZD4EvhNIVhOUzCpXtsK8YJQ=w72-h72-p-rp-mo-ba3-br100',
+    text: '',
+    rating: 5,
+    treatment: ''
+  },
+  {
+    id: 13,
+    name: 'Lorena Arias',
+    image: 'https://lh3.googleusercontent.com/a-/ALV-UjW3EnWhLaV6eD3b8kNcndhDoOegYCDBGP61LNwz4wWQu2gwTfP9ww=w72-h72-p-rp-mo-br100',
+    text: '',
+    rating: 5,
+    treatment: ''
+  },
+  {
+    id: 14,
+    name: 'Hector Adrian Antunez',
+    image: 'https://lh3.googleusercontent.com/a-/ALV-UjU-vplvAk_zvdKxY6MZ0rA90qpMabxK0QS6LKyvJ3gENhzJVZPB3w=w72-h72-p-rp-mo-ba5-br100',
+    text: '',
+    rating: 5,
+    treatment: ''
+  },
+  {
+    id: 15,
+    name: 'Fedra Sigampa',
+    image: 'https://lh3.googleusercontent.com/a-/ALV-UjWumPsx8v49f5ex92zJF-Y3fZGiIxQolMzCawn4L_WeZDNztuPDtw=w72-h72-p-rp-mo-ba2-br100',
+    text: '',
+    rating: 5,
+    treatment: ''
   }
 ];
 
@@ -216,7 +312,7 @@ const Results = () => {
                       <img 
                         src={testimonial.image} 
                         alt={testimonial.name} 
-                        className="w-16 h-16 rounded-full object-cover border-2 border-primary"
+                        className="w-16 h-16 rounded-full object-cover border-2 border-black"
                       />
                       <div className="ml-4">
                         <h3 className="text-lg font-bold text-gray-900">{testimonial.name}</h3>
