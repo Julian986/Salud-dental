@@ -9,6 +9,8 @@ import Contact from './pages/Contact'
 import Appointments from './pages/Appointments'
 import ScrollToTop from './components/ScrollToTop'
 
+import { Analytics } from '@vercel/analytics/react'
+
 function App() {
   return (
     <Router>
@@ -27,6 +29,7 @@ function App() {
         </main>
         <Footer />
       </div>
+      <Analytics />
     </Router>
   )
 }
