@@ -83,7 +83,7 @@ const About = () => {
         </section>
 
         {/* Video Section */}
-        <section>
+    {/*     <section>
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">Conoce más sobre nuestro trabajo</h2>
           <div className="aspect-video rounded-lg overflow-hidden">
             <iframe
@@ -94,7 +94,7 @@ const About = () => {
               allowFullScreen
             />
           </div>
-        </section>
+        </section> */}
       </motion.div>
     </div>
   )
