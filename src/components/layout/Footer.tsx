@@ -38,11 +38,11 @@ const Footer = () => {
                         Ortodoncia
                       </Link>
                     </li>
-                    <li>
+                  {/*   <li>
                       <Link to="/servicios" className="text-sm text-gray-500 hover:text-primary transition-colors">
                         Implantes
                       </Link>
-                    </li>
+                    </li> */}
                     <li>
                       <Link to="/servicios" className="text-sm text-gray-500 hover:text-primary transition-colors">
                         Blanqueamiento

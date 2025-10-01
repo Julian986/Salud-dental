@@ -250,11 +250,11 @@ const Contact = () => {
                   <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                   Lunes de 13:30 a 19 hs<br />
+                  Lunes de 13:30 a 19 hs<br />
                   Martes de 9 a 17 hs<br />
                   Miércoles de 13:30 a 19 hs<br />
-                  Jueves. Cerrado<br />
-                  Viernes de 9 a a 17 hs.<br />
+                  Jueves: Cerrado<br />
+                  Viernes de 9 a 17 hs<br />
                   
                 </p>
               </div>

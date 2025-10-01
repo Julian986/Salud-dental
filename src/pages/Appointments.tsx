@@ -470,16 +470,15 @@ const Appointments = () => {
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Horarios de atención</h3>
               <p className="text-gray-600">
-                Lunes a Viernes: 9:00 AM - 6:00 PM<br />
-                Sábados: 9:00 AM - 1:00 PM
+                Lunes y Miércoles: 13:30 a 19&nbsp;hs<br />
+                Martes y Viernes: 9 a 17&nbsp;hs<br />
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Duración de la consulta</h3>
               <p className="text-gray-600">
-                La primera consulta tiene una duración aproximada de 45 minutos.
-                Te recomendamos llegar 15 minutos antes.
+              La consulta tiene una duración de 30 min. Te recomendamos ser puntual.
               </p>
             </div>
 
