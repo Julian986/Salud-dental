@@ -263,7 +263,7 @@ const Contact = () => {
           {/* Mapa */}
           <div className="rounded-lg overflow-hidden w-full h-96"> {/* Altura fija recomendada */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.4467304654595!2d-57.553719624528306!3d-37.96670264279349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584db0bcfa36805%3A0xbd8f81a0d3afebdc!2sConsultorio%20Odontol%C3%B3gico%20Integral%20constituci%C3%B3n%20-%20Dra.%20Jesica!5e0!3m2!1ses!2sar!4v1749577839960!5m2!1ses!2sar"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9066.65859809574!2d-57.560864720591674!3d-37.990704564746615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584d955561af495%3A0xb8b6926726c5b2fa!2sSALUD%20DENTAL%20Mar%20del%20Plata!5e0!3m2!1ses!2sar!4v1763065830043!5m2!1ses!2sar"
               width="100%"
               height="100%"
               style={{ border: 0 }}

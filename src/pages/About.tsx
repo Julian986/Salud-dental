@@ -62,10 +62,10 @@ const About = () => {
                 title: "Odontología Estética",
                 description: "Certificación en técnicas avanzadas de estética dental"
               },
-              {
+              /* {
                 title: "Implantes Dentales",
                 description: "Especialización en colocación de implantes"
-              },
+              }, */
               {
                 title: "Ortodoncia",
                 description: "Certificación en ortodoncia moderna"
