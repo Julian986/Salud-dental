@@ -40,7 +40,7 @@ const About = () => {
           
           <div>
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-              10 años de experiencia en odontología
+              15 años de experiencia en odontología
             </h2>
             <p className="text-gray-600 mb-6">
               La Dra. Jesica es una profesional altamente calificada con más de una década de experiencia

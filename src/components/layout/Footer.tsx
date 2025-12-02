@@ -35,17 +35,32 @@ const Footer = () => {
                   <ul className="mt-4 space-y-3">
                     <li>
                       <Link to="/servicios" className="text-sm text-gray-500 hover:text-primary transition-colors">
-                        Ortodoncia
+                        Odontología general
                       </Link>
                     </li>
-                  {/*   <li>
+                    <li>
                       <Link to="/servicios" className="text-sm text-gray-500 hover:text-primary transition-colors">
-                        Implantes
+                        Niños y adolescentes
                       </Link>
-                    </li> */}
+                    </li>
+                    <li>
+                      <Link to="/servicios" className="text-sm text-gray-500 hover:text-primary transition-colors">
+                        Prótesis
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/servicios" className="text-sm text-gray-500 hover:text-primary transition-colors">
+                        Ortodoncia y Ortopedia
+                      </Link>
+                    </li>
                     <li>
                       <Link to="/servicios" className="text-sm text-gray-500 hover:text-primary transition-colors">
                         Blanqueamiento
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/servicios" className="text-sm text-gray-500 hover:text-primary transition-colors">
+                        Estética facial
                       </Link>
                     </li>
                     <li>
