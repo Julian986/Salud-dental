@@ -10,10 +10,12 @@ import Appointments from './pages/Appointments'
 import ScrollToTop from './components/ScrollToTop'
 
 import { Analytics } from '@vercel/analytics/react'
+import GoogleAnalytics from './components/GoogleAnalytics'
 
 function App() {
   return (
     <Router>
+      <GoogleAnalytics />
       <ScrollToTop />
       <div className="min-h-screen bg-white">
         <Header />
