@@ -7,8 +7,10 @@ export default function GoogleAnalytics() {
   const location = useLocation()
 
   useEffect(() => {
-    if (typeof window.gtag === 'function') {
-      window.gtag('config', GA_MEASUREMENT_ID, {
+    const gtag = (window as any).gtag
+
+    if (typeof gtag === 'function') {
+      gtag('config', GA_MEASUREMENT_ID, {
         page_path: location.pathname + location.search,
       })
     }
