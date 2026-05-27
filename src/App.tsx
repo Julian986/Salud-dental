@@ -11,10 +11,13 @@ import ScrollToTop from './components/ScrollToTop'
 
 import { Analytics } from '@vercel/analytics/react'
 import GoogleAnalytics from './components/GoogleAnalytics'
+import SeoManager from './components/SeoManager'
+import FloatingWhatsApp from './components/FloatingWhatsApp'
 
 function App() {
   return (
     <Router>
+      <SeoManager />
       <GoogleAnalytics />
       <ScrollToTop />
       <div className="min-h-screen bg-white">
@@ -32,6 +35,7 @@ function App() {
         <Footer />
       </div>
       <Analytics />
+      <FloatingWhatsApp />
     </Router>
   )
 }

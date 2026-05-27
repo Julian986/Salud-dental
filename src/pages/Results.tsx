@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import { trackReservarTurno } from '../lib/analytics';
 
 interface BeforeAfter {
   id: number;
@@ -342,7 +343,8 @@ const Results = () => {
               Agenda una consulta y descubre cómo podemos ayudarte a lograr la sonrisa que siempre has deseado.
             </p>
             <Link 
-              to="/turnos" 
+              to="/turnos"
+              onClick={() => trackReservarTurno('resultados_reservar_consulta')}
               className="inline-block bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition duration-300"
             >
               Reservar Consulta

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { trackReservarTurno } from '../../lib/analytics'
 
 const Footer = () => {
   return (
@@ -85,7 +86,11 @@ const Footer = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link to="/turnos" className="text-sm text-gray-500 hover:text-primary transition-colors">
+                      <Link
+                        to="/turnos"
+                        onClick={() => trackReservarTurno('footer_reservar_turno')}
+                        className="text-sm text-gray-500 hover:text-primary transition-colors"
+                      >
                         Reservar turno
                       </Link>
                     </li>

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import { trackReservarTurno } from '../../lib/analytics'
 
 const navItems = [
   { name: "Inicio", path: "/" },
@@ -61,6 +62,7 @@ const Header = () => {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
             to="/turnos"
+            onClick={() => trackReservarTurno('header_turnos_desktop')}
             className={`text-sm font-semibold leading-6 ${
               location.pathname === '/turnos' ? 'text-primary' : 'text-gray-900 hover:text-primary'
             }`}
@@ -122,7 +124,10 @@ const Header = () => {
                       className={`-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 ${
                         location.pathname === '/turnos' ? 'text-primary' : 'text-gray-900 hover:bg-gray-50'
                       }`}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      onClick={() => {
+                        trackReservarTurno('header_turnos_mobile')
+                        setIsMobileMenuOpen(false)
+                      }}
                     >
                       Turnos online
                     </Link>

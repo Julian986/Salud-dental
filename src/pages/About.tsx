@@ -33,7 +33,7 @@ const About = () => {
           <div className="relative aspect-square rounded-lg overflow-hidden">
             <img
               src="https://res.cloudinary.com/dnnxgzqzv/image/upload/v1749842376/jesica_exuyvz.webp"
-              alt="Dra. Jesica"
+              alt="Dra. Jesica Goroso, odontóloga en Mar del Plata"
               className="object-cover w-full h-full"
             />
           </div>

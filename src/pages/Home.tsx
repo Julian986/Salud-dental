@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
+import { trackReservarTurno, trackWhatsApp } from '../lib/analytics'
 import Slider from 'react-slick'
 import type { CustomArrowProps } from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -314,13 +315,14 @@ const Home = () => {
     {/* <h1 className="text-4xl sm:text-6xl font-light tracking-tight text-gray-900 leading-tight">
       Salud Dental
     </h1> */}
-    <img src={image} alt="logo" className="block mx-auto w-[21rem] sm:w-96 md:w-[28rem] lg:w-[36rem] h-auto" />
+    <img src={image} alt="Salud Dental - Dra. Jesica Goroso, odontóloga en Mar del Plata" className="block mx-auto w-[21rem] sm:w-96 md:w-[28rem] lg:w-[36rem] h-auto" />
     <p className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed">
       Consultorio Odontológico Especializado con atención profesional para toda la familia.
     </p>
     <div className="mt-10 flex items-center justify-center">
       <Link
         to="/turnos"
+        onClick={() => trackReservarTurno('hero_reservar_turno')}
         className="inline-block text-md rounded-full border border-primary bg-[rgb(44,123,183)] px-6 py-3 font-bold tracking-tight text-white hover:bg-[rgb(44,123,183)]/90 transition"
       >
         Reservar turno
@@ -565,9 +567,10 @@ const Home = () => {
             Escribinos hoy mismo y da el primer paso hacia la mejor sonrisa !
           </p>
           <a
-            href="https://wa.me/2236160437"
+            href="https://wa.me/5492236160437?text=Hola! Quiero consultar por un turno en Salud Dental."
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsApp('home_cta_whatsapp')}
             className="inline-flex items-center gap-2 text-lg bg-green-500 text-white font-bold py-3 px-8 rounded-full hover:bg-green-600 transition duration-300"
           >
             <svg
